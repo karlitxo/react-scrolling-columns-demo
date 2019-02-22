@@ -1,0 +1,29 @@
+{
+  "name": "zapp",
+  "version": "1.0.0",
+  "description": "zapp ts reactjs momgodb",
+  "main": "index.js",
+  "scripts": {
+    "start:express": "tsc-watch --onSuccess 'node inspect start.js dev' --onFailure 'echo Beep! Compilation Failed' ",
+    "test": "nyc mocha test"
+  },
+  "author": "TP",
+  "license": "ISC",
+  "devDependencies": {
+    "@overnightjs/core": "^1.4.0",
+    "@types/express": "^4.16.1",
+    "@types/jasmine": "^3.3.9",
+    "@types/node": "^11.9.3",
+    "@types/supertest": "^2.0.7",
+    "jasmine": "^3.3.1",
+    "simple-color-print": "^1.0.6",
+    "supertest": "^3.4.2",
+    "tsc": "^1.20150623.0",
+    "tsc-watch": "^1.1.39",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}

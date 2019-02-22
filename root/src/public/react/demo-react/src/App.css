@@ -1,0 +1,142 @@
+html,
+body {
+  margin: 0;
+  background-color: #212529;
+}
+
+#App {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+}
+
+hr { border-color: #fff;}
+
+/*Remove the scrollbar from Chrome, Safari, Edge and IE*/
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+* {
+  -ms-overflow-style: none !important;
+}
+
+.container-fluid {
+    margin-left: 0px;
+}
+
+/* The heart of the matter */
+.colscontainer > .row {
+  grid-auto-columns: auto;
+  overflow-x: scroll;
+  white-space: nowrap;
+  margin-left: 0;
+}
+
+.colscontainer > .row > .col-xs-12 {
+  display: inline-block; 
+  margin-top:120px;
+  
+  .cellsinCol{ margin-top: 10px;
+      height: 100vh;
+      overflow-y: scroll;
+  }
+}
+
+img{ 
+    width:180px;
+    max-height:80px;
+     
+}
+
+.channelImage {
+    height:120px;
+}
+
+.cell {
+  padding: 3px;
+  max-height: 220px;
+  margin-bottom: 3px;
+
+}
+
+.cellsinCol{ margin-top: 10px;
+    height: 100vh;
+    overflow-y: scroll;
+    .cell { min-height: 120px;
+            max-height: 240px;
+        }
+}
+
+/* Decorations */
+.col-xs-12 { color: #fff; font-size: 10px; padding-bottom: 20px; padding-top: 18px; }
+.col-xs-12:nth-child(3n+1) { background: #224; }
+.col-xs-12:nth-child(3n+2) { background: #446; }
+.col-xs-12:nth-child(3n+3) { background: #335; }
+
+
+.list-inline {
+  white-space:nowrap;
+}
+
+/* #c69#96c#69c */
+.title { font-size: 1.4em; }
+.subtitle { font-size: 1.0em; }
+.duration { font-size: 0.9em; }
+.date { font-size: 1em;}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+}
+
+.bm-item:hover {
+  color: white;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
