@@ -61,7 +61,7 @@ class App extends Component <{}, {day: number, loading: boolean,items: Item[]}>{
     callExpress();
     
   */
-    alert(`Today: ${this.state.day}  ${items[0].shows[0]._id}`);
+    //alert(`Today: ${this.state.day}`);
     
     //var items = DayChange(this.state.day);
     //var items = getData(this.state.day);
