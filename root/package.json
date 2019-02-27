@@ -4,8 +4,8 @@
   "description": "zapp ts reactjs momgodb",
   "main": "index.js",
   "scripts": {
-    "start:express": "tsc-watch --onSuccess 'node inspect start.js dev' --onFailure 'echo Beep! Compilation Failed' ",
-    "test": "nyc mocha test"
+    "start:express": "tsc-watch --onSuccess 'node inspect ./src/start.js dev' --onFailure 'echo Beep! Compilation Failed' ",
+    "test": "ts-node ./src/start.js test"
   },
   "author": "TP",
   "license": "ISC",

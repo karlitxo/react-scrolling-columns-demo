@@ -6,15 +6,45 @@ import './App.css';
 import TheShows from './components/shows';
 import Cell from './components/Cell';
 import ChannelImage from './components/ChannelImage';
-import getData , {Item,Items,Show} from './components/getData';
-
+import getData , {Items,Item,Show} from './components/getData';
+//import Items from './components/getData';
 import { Grid,Container,Row,Col } from 'reactstrap';
-//function DayChange(day){  var items=getData(day); }
-class App extends Component {
-  
 
+//function DayChange(day){  var items=getData(day); }
+// type AppState = {day: number,
+//      loading: boolean}
+// type Props = {}
+export function DayChange(myDay){ 
+     var result=getData(myDay);
+     return result
+}
+
+class App extends Component <{}, {day: number, loading: boolean,items: Item[]}>{
+    constructor(props) {
+        super(props)
+        this.state = {
+            day: 1,
+            loading: false,
+            items: []
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount() {
+       //this.setState({loading: true, items: DayChange(this.state.day)});
+       this.handleChange(this.state.day);
+    }
     
-  render() {
+    
+    handleChange(value){
+       this.setState({day:value, loading:true, items: getData(value)});
+    }
+    /*
+    componentWillReceiveProps(props) {
+        this.setState
+    }
+    */
+    render() {
     /* CORS bug, to fix
     async function callExpress()  {
       try {
@@ -31,24 +61,24 @@ class App extends Component {
     callExpress();
     
   */
-
-    var day = 1;
-    var items  = [];
-  
-    function DayChange(day){ items=getData(day); }
+    alert(`Today: ${this.state.day}  ${items[0].shows[0]._id}`);
     
-    DayChange(day);
-
+    //var items = DayChange(this.state.day);
+    //var items = getData(this.state.day);
+        
     return (
+    
     <div className="App" >
         <Container className="container-fluid">
-              <Row className="row flex-row flex-nowrap">
-              {  items.map( ({item,shows,channelImage}) => 
+             <Row className="row flex-row flex-nowrap">
+                 {  this.state.items.map( ({shows,channelImage}) => 
               
-              <Fragment key={shows[0].channelID+'COL'} ><Col className="col-xs-12">
+              <Fragment key={shows[0].channelID+'COL'} >
+              <Col className="col-xs-12">
                 <ChannelImage key={shows[0].channelID+'CIMG'} channelImage={channelImage} />
-                <TheShows key={shows[0]._id+shows[0].channelID+'S'} {...shows} />
-              </Col></Fragment>
+                <TheShows key={shows[0]._id+shows[0].channelID+'S'} handleChange={this.handleChange} shows={shows} />
+              </Col>
+              </Fragment>
             
             /*  <ShowsColumn key={shows[0].channelID}{...item} /> */
               
@@ -57,10 +87,9 @@ class App extends Component {
               </Row>
         </Container>
     </div>);
+    this.setState({loading: false});
     }
     
 }
 
-export function DayChange(day){ var items=getData(day);
-                                         return}
 export default App;

@@ -7,9 +7,8 @@ export type Item = {
   channelImage: string;
   shows: Show[];
 }
-export type Items = {
-  item: Item
-}
+export type Items = Item[];
+
 export type Show = {
     _id?: string,
     showID: number,

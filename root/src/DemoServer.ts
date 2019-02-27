@@ -2,7 +2,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import { Server } from '@overnightjs/core';
 import { cimp, cinfo } from 'simple-color-print';
-import DemoController from './controllers/DemoController';
+import DemoController from './controllers/demo/DemoController';
 
 
 class DemoServer extends Server {
